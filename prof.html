@@ -1,0 +1,205 @@
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .profile-container {
+      width: 90%;
+      max-width: 600px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .profile-header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .profile-header h2 {
+      font-size: 24px;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .profile-header p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .profile-stats {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 20px;
+    }
+
+    .profile-stats div {
+      text-align: center;
+    }
+
+    .profile-stats h3 {
+      font-size: 20px;
+      color: #ff5722;
+    }
+
+    .profile-stats p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .rewards-section {
+      text-align: left;
+      padding: 0 20px;
+    }
+
+    .rewards-section h3 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .reward-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .reward-item p {
+      font-size: 14px;
+      color: #555;
+      margin: 4px 0;
+    }
+
+    .reward-item p span {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .button-group button {
+      padding: 10px 15px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #ff5722;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button-group button:hover {
+      background-color: #e64a19;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="profile-container">
+  <!-- Profile Header -->
+  <div class="profile-header">
+    <img src="man.jpg" alt="User Photo">
+    <h2>John Doe</h2>
+    <p>Joined: January 2023</p>
+  </div>
+
+  <!-- Profile Stats -->
+  <div class="profile-stats">
+    <div>
+      <h3>12</h3>
+      <p>Challenges Completed</p>
+    </div>
+    <div>
+      <h3>5</h3>
+      <p>Rewards</p>
+    </div>
+    <div>
+      <h3>8</h3>
+      <p>Active Challenges</p>
+    </div>
+  </div>
+
+  <!-- Rewards Section -->
+  <div class="rewards-section">
+    <h3>Rewards Earned</h3>
+    <div class="reward-item">
+      <p><span>Reward:</span> Free Coffee</p>
+      <p><span>Time Taken:</span> 1 hour</p>
+      <p><span>Location:</span> Downtown Cafe</p>
+    </div>
+    <div class="reward-item">
+      <p><span>Reward:</span> Discount Voucher</p>
+      <p><span>Time Taken:</span> 30 minutes</p>
+      <p><span>Location:</span> Mall Center</p>
+    </div>
+    <div class="reward-item">
+      <p><span>Reward:</span> Movie Ticket</p>
+      <p><span>Time Taken:</span> 45 minutes</p>
+      <p><span>Location:</span> Cinema Plaza</p>
+    </div>
+    <!-- Additional reward items can be added here -->
+  </div>
+
+  <!-- Button Group -->
+  <div class="button-group">
+    <button onclick="editProfile()">Edit Profile</button>
+    <button onclick="viewProgress()">View Progress</button>
+  </div>
+</div>
+
+<script>
+  function editProfile() {
+    alert("Edit profile functionality not implemented yet.");
+  }
+
+  function viewProgress() {
+    alert("View progress functionality not implemented yet.");
+  }
+</script>
+
+</body>
+</html>

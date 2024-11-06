@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard Navigation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Basic Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f8f9fa;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 250px;
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+    }
+
+    .sidebar h2 {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul li a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s, background-color 0.3s;
+      display: block;
+      padding: 8px;
+      border-radius: 4px;
+    }
+
+    .sidebar ul li a:hover {
+      color: #fff;
+      background-color: #555;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .sidebar ul li {
+        margin-bottom: 10px;
+      }
+    }
+
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar Navigation -->
+<div class="sidebar">
+  <h2>App Design</h2>
+  <ul>
+    <li><a href="app.html">Sign Up & Log in </a></li>
+    <li><a href="hooo.html">Home</a></li>
+    <li><a href="prof.html">Profile</a></li>
+    <li><a href="challenge.html">Challenge</a></li>
+    <li><a href="map.html">Live Map</a></li>
+    <li><a href="notification.html">Notifications</a></li>
+    <li><a href="admin.html">Admin Controls</a></li>
+    <li><a href="creat.html">Creat New Challenge</a></li>
+   
+  </ul>
+</div>
+
+</body>
+</html>

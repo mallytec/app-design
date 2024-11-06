@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      background-color: #f8f9fa;
+      color: #333;
+      padding: 20px;
+    }
+
+    .dashboard-container {
+      width: 90%;
+      max-width: 1200px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .dashboard-header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .dashboard-header h2 {
+      font-size: 28px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .section {
+      margin-top: 20px;
+    }
+
+    .section h3 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .section .card {
+      display: flex;
+      align-items: center;
+      background-color: #f4f4f4;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .section .card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      margin-right: 15px;
+      background-color: #ddd;
+      object-fit: cover;
+    }
+
+    .section .card .card-details {
+      flex: 1;
+    }
+
+    .section .card .card-title {
+      font-size: 16px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .section .card .card-info {
+      font-size: 14px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .button {
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #fff;
+      background-color: #ff5722;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #e64a19;
+    }
+
+    /* Audio Monitoring Styling */
+    .audio-monitor {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .audio-monitor .user-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fafafa;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .user-card p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+  <!-- Dashboard Header -->
+  <div class="dashboard-header">
+    <h2>Admin Dashboard</h2>
+    <p>Manage challenges, monitor voice conversations, and oversee app activity.</p>
+  </div>
+
+  <!-- Active Challenges Section -->
+  <div class="section">
+    <h3>Active Challenges</h3>
+    <div class="card">
+      <img src="asset/ancient-coins.jpg" alt="Challenge Image">
+      <div class="card-details">
+        <p class="card-title">Mountain Explorer</p>
+        <p class="card-info">Active Participants: 34</p>
+        <p class="card-info">Ends in: 2 days</p>
+      </div>
+      <button class="button" onclick="endChallenge('Mountain Explorer')">End Challenge</button>
+    </div>
+    <!-- More active challenges can be added here -->
+  </div>
+
+  <!-- New Challenges Section -->
+  <div class="section">
+    <h3>Set New Challenge</h3>
+    <p>Create a new challenge and publish it for users.</p>
+    <button class="button" onclick="createChallenge()">Create New Challenge</button>
+  </div>
+
+  <!-- User Achievements Section -->
+  <div class="section">
+    <h3>Recent User Achievements</h3>
+    <div class="card">
+      <img src="asset/user1.jpg" alt="User Image">
+      <div class="card-details">
+        <p class="card-title">John Doe</p>
+        <p class="card-info">Completed "Treasure Hunt" 5 hours ago</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="asset/user2.jpg" alt="User Image">
+      <div class="card-details">
+        <p class="card-title">Sarah Lee</p>
+        <p class="card-info">Found reward in "Golden Crown Quest"</p>
+      </div>
+    </div>
+    <!-- More user achievements can be added here -->
+  </div>
+
+  <!-- App Activity Section -->
+  <div class="section">
+    <h3>App Activity</h3>
+    <div class="card">
+      <div class="card-details">
+        <p class="card-title">Current Users Online: 120</p>
+        <p class="card-info">Active Challenges: 5</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Monitoring Section -->
+  <div class="section">
+    <h3>Monitor Live Voice Chats</h3>
+    <div class="audio-monitor">
+      <div class="user-card">
+        <p>User: John Doe</p>
+        <button class="button" onclick="listenToVoice('John Doe')">Listen to Conversation</button>
+        <button class="button" onclick="banUser('John Doe')">Ban User</button>
+      </div>
+      <div class="user-card">
+        <p>User: Jane Smith</p>
+        <button class="button" onclick="listenToVoice('Jane Smith')">Listen to Conversation</button>
+        <button class="button" onclick="banUser('Jane Smith')">Ban User</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function endChallenge(challengeName) {
+    alert(`The ${challengeName} challenge has been ended.`);
+  }
+function createChallenge() {
+    
+    window.location.href = "creat.html";
+}
+
+  function listenToVoice(userName) {
+    alert(`Connecting to live conversation with ${userName}...`);
+    // Implementation would connect to the user’s audio stream
+  }
+
+  function banUser(userName) {
+    const confirmBan = confirm(`Are you sure you want to ban ${userName}?`);
+    if (confirmBan) {
+      alert(`${userName} has been banned from the platform.`);
+      // Backend logic for banning user
+    }
+  }
+</script>
+
+</body>
+</html>
